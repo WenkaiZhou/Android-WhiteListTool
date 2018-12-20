@@ -8,36 +8,47 @@ import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.google.gson.Gson
+import com.kevin.whitelisttool.network.HttpURLConnectionNetworkTask
+import com.kevin.whitelisttool.network.NetworkTask
 import com.kevin.whitelisttool.util.DeviceUtils
-import com.kevin.whitelisttool.util.LocalFileUtils
 
 
 class MainActivity : AppCompatActivity() {
 
+    companion object {
+        const val URL =
+            "https://raw.githubusercontent.com/xuehuayous/Android-WhiteListTool/master/app/src/main/assets/WHITE_LIST.md"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-
-        val intent = packageManager.getLaunchIntentForPackage("com.coloros.safecenter")
-        System.out.print(intent)
     }
 
     fun openSettings(view: View) {
-        val listStr = LocalFileUtils.getStringFormAsset(this, "WHITE_LIST.md")
-        val whiteListInfo = Gson().fromJson<WhiteListInfo>(listStr, WhiteListInfo::class.java)
+        val networkTask: NetworkTask = HttpURLConnectionNetworkTask(NetworkTask.POST)
+        networkTask.execute("http://123.57.31.11/androidnet/getJoke", "id=5")
+        networkTask.setResponceLintener(object : NetworkTask.ResponceLintener {
+            override fun onSuccess(result: String) {
 
-        val brand = DeviceUtils.getBrand()
-        whiteListInfo.items?.forEach { whiteList ->
-            if (brand.toLowerCase() == whiteList.device?.brand?.toLowerCase()) {
-                whiteList.intents?.forEach { intent ->
-                    val target = createIntent(intent)
-                    if (doesActivityExists(target)) {
-                        showTip(intent.title, intent.message, target)
+                val whiteListInfo = Gson().fromJson<WhiteListInfo>(result, WhiteListInfo::class.java)
+                val brand = DeviceUtils.getBrand()
+                whiteListInfo.items?.forEach { whiteList ->
+                    if (brand.toLowerCase() == whiteList.device?.brand?.toLowerCase()) {
+                        whiteList.intents?.forEach { intent ->
+                            val target = createIntent(intent)
+                            if (doesActivityExists(target)) {
+                                showTip(intent.title, intent.message, target)
+                            }
+                        }
                     }
                 }
             }
-        }
+
+            override fun onError(error: String) {
+                System.out.print(error)
+            }
+        })
     }
 
     private fun showTip(title: String, message: String, target: Intent) {
