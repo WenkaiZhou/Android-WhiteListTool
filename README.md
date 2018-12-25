@@ -17,7 +17,7 @@ Android 启动白名单工具-用于帮助用户直达白名单管理
 
 ## OPPO
 
-`R15 PACM00 ColorOS 5.0(8.1.0)` `R7s ColorOS 2.1(4.4.4)`
+`R15 PACM00 ColorOS 5.0(8.1.0)` `R7s ColorOS 2.1(4.4.4)` `R9t ColorOS 3.0.0(5.1)`
 
 ## Vivo
 
