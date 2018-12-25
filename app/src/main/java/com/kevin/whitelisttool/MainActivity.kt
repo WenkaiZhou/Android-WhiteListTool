@@ -9,15 +9,25 @@ import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View
+import android.widget.ProgressBar
 import android.widget.TextView
+import android.widget.Toast
 import com.google.gson.Gson
 import com.kevin.whitelisttool.network.OkHttpCall
 import com.kevin.whitelisttool.util.DeviceUtils
 import okhttp3.*
 import java.io.IOException
+import java.util.concurrent.TimeUnit
 
 
 class MainActivity : AppCompatActivity() {
+
+    private val client = OkHttpClient.Builder()
+            .connectTimeout(10, TimeUnit.SECONDS)
+            .readTimeout(10, TimeUnit.SECONDS)
+            .build()
+
+    private lateinit var loading: ProgressBar
 
     companion object {
         const val URL =
@@ -28,6 +38,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        loading = findViewById(R.id.loading)
         val deviceInfoTextView = findViewById<TextView>(R.id.tv_device_info)
         val deviceInfo =
             "${DeviceUtils.getModel()} ${DeviceUtils.getIncrementalVersion()}(${DeviceUtils.getReleaseVersion()})"
@@ -36,7 +47,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun openSettings(view: View) {
-        val client = OkHttpClient()
+        loading.visibility = View.VISIBLE
+        view.isEnabled = false
+
         val request = Request.Builder()
             .url(URL)
             .get()
@@ -45,10 +58,16 @@ class MainActivity : AppCompatActivity() {
         val okHttpCall = OkHttpCall(call)
         okHttpCall.enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
+                loading.visibility = View.GONE
+                view.isEnabled = true
                 Log.e("TAG", "error: ${e.message}")
+                findViewById<TextView>(R.id.tv_error_info).text = e.message
+                Toast.makeText(applicationContext, "获取数据超时，请重试！", Toast.LENGTH_SHORT).show()
             }
 
             override fun onResponse(call: Call, response: Response) {
+                loading.visibility = View.GONE
+                view.isEnabled = true
                 val result = response.body()!!.string()
                 Log.d("TAG", "responseStr: $result")
 
@@ -116,6 +135,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         } catch (e: Exception) {
             e.printStackTrace()
+            findViewById<TextView>(R.id.tv_error_info).text = e.message
         }
     }
 
