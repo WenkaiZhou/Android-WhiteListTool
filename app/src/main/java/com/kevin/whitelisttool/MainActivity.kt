@@ -53,14 +53,16 @@ class MainActivity : AppCompatActivity() {
                 Log.d("TAG", "responseStr: $result")
 
                 val whiteListInfo = Gson().fromJson<WhiteListInfo>(result, WhiteListInfo::class.java)
+                Log.d("TAG", "size: ${whiteListInfo.items?.size}")
                 val brand = DeviceUtils.getBrand()
+                Log.d("TAG", "brand: $brand")
                 whiteListInfo.items?.forEach { whiteList ->
                     if (brand.toLowerCase() == whiteList.device?.brand?.toLowerCase()) {
                         whiteList.intents?.forEach { intent ->
                             val target = createIntent(intent)
-                            if (doesActivityExists(target)) {
+//                            if (doesActivityExists(target)) {
                                 showTip(intent.title, intent.message, target)
-                            }
+//                            }
                         }
                     }
                 }

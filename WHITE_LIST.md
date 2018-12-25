@@ -66,7 +66,7 @@
                 },
                 "intents": [
                     {
-                        "desc": "开机自动启动 // 8.0",
+                        "desc": "开机自动启动 // OPPO R15",
                         "title": "需要允许自动启动 1",
                         "message": "为了核心服务的正常运行，需要在权限管理的自启动管理中添加为允许自动启动。",
                         "component": {
@@ -75,8 +75,17 @@
                         }
                     },
                     {
-                        "desc": "开机自动启动 // 7.0",
+                        "desc": "开机自动启动 // OPPO R7",
                         "title": "需要允许自动启动 2",
+                        "message": "为了核心服务的正常运行，需要在权限管理的自启动管理中添加为允许自动启动。",
+                        "component": {
+                            "pkg": "com.coloros.safecenter",
+                            "cls": "com.coloros.safecenter.permission.PermissionTopActivity"
+                        }
+                    },
+                    {
+                        "desc": "开机自动启动 // OPPO R9",
+                        "title": "需要允许自动启动 3",
                         "message": "为了核心服务的正常运行，需要在权限管理的自启动管理中添加为允许自动启动。",
                         "component": {
                             "pkg": "com.color.safecenter",
@@ -122,12 +131,6 @@
                             "pkg": "com.letv.android.letvsafe",
                             "cls": "com.letv.android.letvsafe.BackgroundAppManageActivity"
                         }
-                    },
-                    {
-                        "desc": "乐视应用保护",
-                        "title": "需要添加至应用保护  1",
-                        "message": "为了核心服务的正常运行，需要添加至应用保护。",
-                        "action": "com.letv.android.permissionandapps"
                     }
                 ]
             }
