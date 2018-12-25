@@ -116,6 +116,7 @@
                     },
                     {
                         "desc": "乐视应用保护",
+                        "title": "需要进制被自动清理",
                         "message": "为了核心服务的正常运行，需要自动清理。",
                         "component": {
                             "pkg": "com.letv.android.letvsafe",
