@@ -60,9 +60,9 @@ class MainActivity : AppCompatActivity() {
                     if (brand.toLowerCase() == whiteList.device?.brand?.toLowerCase()) {
                         whiteList.intents?.forEach { intent ->
                             val target = createIntent(intent)
-//                            if (doesActivityExists(target)) {
+                            if (doesActivityExists(target)) {
                                 showTip(intent.title, intent.message, target)
-//                            }
+                            }
                         }
                     }
                 }
