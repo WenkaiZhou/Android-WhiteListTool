@@ -29,7 +29,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val deviceInfoTextView = findViewById<TextView>(R.id.tv_device_info)
-        val deviceInfo = "${DeviceUtils.getModel()} ${DeviceUtils.getIncrementalVersion()}(${DeviceUtils.getReleaseVersion()})"
+        val deviceInfo =
+            "${DeviceUtils.getModel()} ${DeviceUtils.getIncrementalVersion()}(${DeviceUtils.getReleaseVersion()})"
         Log.e("TAG", "deviceInfo: $deviceInfo")
         deviceInfoTextView.text = deviceInfo
     }
@@ -82,6 +83,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun createIntent(intent: WhiteListInfo.IntentItem): Intent {
         val target = Intent()
+        target.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         if (intent.action.isNotEmpty()) {
             target.action = intent.action
         }
