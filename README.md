@@ -22,3 +22,7 @@ Android 启动白名单工具-用于帮助用户直达白名单管理
 ## Vivo
 
 `vivo X6D Funtouch OS_2.5(5.1)`
+
+## Letv
+
+`1s Letv X501 EUI 5.9.028s(6.0)`

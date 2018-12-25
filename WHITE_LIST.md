@@ -110,7 +110,7 @@
                 "intents": [
                    {
                         "desc": "乐视自启动管理",
-                        "title": "需要允许后台高耗电",
+                        "title": "需要允许自动启动",
                         "message": "为了核心服务的正常运行，需要添加至白名单。",
                         "action": "com.letv.android.permissionautoboot"
                     }
