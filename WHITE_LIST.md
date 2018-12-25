@@ -122,6 +122,12 @@
                             "pkg": "com.letv.android.letvsafe",
                             "cls": "com.letv.android.letvsafe.BackgroundAppManageActivity"
                         }
+                    },
+                    {
+                        "desc": "乐视应用保护",
+                        "title": "需要添加至应用保护  1",
+                        "message": "为了核心服务的正常运行，需要添加至应用保护。",
+                        "action": "com.letv.android.permissionandapps"
                     }
                 ]
             }
