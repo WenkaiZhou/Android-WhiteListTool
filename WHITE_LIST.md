@@ -116,8 +116,8 @@
                     },
                     {
                         "desc": "乐视应用保护",
-                        "title": "需要进制被自动清理",
-                        "message": "为了核心服务的正常运行，需要自动清理。",
+                        "title": "需要添加至应用保护",
+                        "message": "为了核心服务的正常运行，需要添加至应用保护。",
                         "component": {
                             "pkg": "com.letv.android.letvsafe",
                             "cls": "com.letv.android.letvsafe.BackgroundAppManageActivity"
