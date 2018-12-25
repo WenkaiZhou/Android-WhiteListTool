@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         const val URL =
-            "https://raw.githubusercontent.com/xuehuayous/Android-WhiteListTool/master/app/src/main/assets/WHITE_LIST.md"
+            "https://raw.githubusercontent.com/xuehuayous/Android-WhiteListTool/master/WHITE_LIST.md"
     }
 
     @SuppressLint("SetTextI18n")
@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val deviceInfoTextView = findViewById<TextView>(R.id.tv_device_info)
-        val deviceInfo = "${DeviceUtils.getBrand()} ${DeviceUtils.getModel()} ${DeviceUtils.getIncrementalVersion()}(${DeviceUtils.getReleaseVersion()})"
+        val deviceInfo = "${DeviceUtils.getModel()} ${DeviceUtils.getIncrementalVersion()}(${DeviceUtils.getReleaseVersion()})"
         Log.e("TAG", "deviceInfo: $deviceInfo")
         deviceInfoTextView.text = deviceInfo
     }
@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         val okHttpCall = OkHttpCall(call)
         okHttpCall.enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
+                Log.e("TAG", "error: ${e.message}")
             }
 
             override fun onResponse(call: Call, response: Response) {
