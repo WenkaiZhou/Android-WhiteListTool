@@ -6,11 +6,13 @@ import android.content.pm.PackageManager
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.View
 import com.google.gson.Gson
-import com.kevin.whitelisttool.network.HttpURLConnectionNetworkTask
-import com.kevin.whitelisttool.network.NetworkTask
+import com.kevin.whitelisttool.network.OkHttpCall
 import com.kevin.whitelisttool.util.DeviceUtils
+import okhttp3.*
+import java.io.IOException
 
 
 class MainActivity : AppCompatActivity() {
@@ -26,10 +28,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun openSettings(view: View) {
-        val networkTask: NetworkTask = HttpURLConnectionNetworkTask(NetworkTask.POST)
-        networkTask.execute("http://123.57.31.11/androidnet/getJoke", "id=5")
-        networkTask.setResponceLintener(object : NetworkTask.ResponceLintener {
-            override fun onSuccess(result: String) {
+        val client = OkHttpClient()
+        val request = Request.Builder()
+            .url(URL)
+            .get()
+            .build()
+        val call = client.newCall(request)
+        val okHttpCall = OkHttpCall(call)
+        okHttpCall.enqueue(object : Callback {
+            override fun onFailure(call: Call, e: IOException) {
+            }
+
+            override fun onResponse(call: Call, response: Response) {
+                val result = response.body()!!.string()
+                Log.d("TAG", "responseStr: $result")
 
                 val whiteListInfo = Gson().fromJson<WhiteListInfo>(result, WhiteListInfo::class.java)
                 val brand = DeviceUtils.getBrand()
@@ -43,11 +55,9 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
                 }
+
             }
 
-            override fun onError(error: String) {
-                System.out.print(error)
-            }
         })
     }
 
