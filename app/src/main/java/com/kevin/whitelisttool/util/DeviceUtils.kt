@@ -32,7 +32,12 @@ object DeviceUtils {
     fun getSystemVersion() = android.os.Build.VERSION.RELEASE
 
     /**
-     *
+     * 获取内部版本号
      */
     fun getIncrementalVersion() = android.os.Build.VERSION.INCREMENTAL
+
+    /**
+     * 获取系统版本号
+     */
+    fun getReleaseVersion() = android.os.Build.VERSION.RELEASE
 }

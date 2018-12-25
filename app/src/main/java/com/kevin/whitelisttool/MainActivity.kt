@@ -1,5 +1,6 @@
 package com.kevin.whitelisttool
 
+import android.annotation.SuppressLint
 import android.content.ComponentName
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -8,6 +9,7 @@ import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View
+import android.widget.TextView
 import com.google.gson.Gson
 import com.kevin.whitelisttool.network.OkHttpCall
 import com.kevin.whitelisttool.util.DeviceUtils
@@ -22,9 +24,14 @@ class MainActivity : AppCompatActivity() {
             "https://raw.githubusercontent.com/xuehuayous/Android-WhiteListTool/master/app/src/main/assets/WHITE_LIST.md"
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val deviceInfoTextView = findViewById<TextView>(R.id.tv_device_info)
+        val deviceInfo = "${DeviceUtils.getBrand()} ${DeviceUtils.getModel()} ${DeviceUtils.getIncrementalVersion()}(${DeviceUtils.getReleaseVersion()})"
+        Log.e("TAG", "deviceInfo: $deviceInfo")
+        deviceInfoTextView.text = deviceInfo
     }
 
     fun openSettings(view: View) {
