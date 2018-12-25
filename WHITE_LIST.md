@@ -60,24 +60,6 @@
                 ]
             },
             {
-                "desc": "VIVO手机白名单管理",
-                "device": {
-                    "brand": "vivo"
-                },
-                "intents": [
-                   {
-                        "desc": "后台高耗电",
-                        "title": "需要允许后台高耗电",
-                        "message": "为了核心服务的正常运行，需要添加至允许后台高耗电。",
-                        "component": {
-                            "pkg": "com.vivo.abe",
-                            "cls": "com.vivo.applicationbehaviorengine.ui.ExcessivePowerManagerActivity"
-                        }
-                    }
-                ]
-                
-            },
-            {
                 "desc": "OPPO手机白名单管理",
                 "device": {
                     "brand": "OPPO"
@@ -99,6 +81,23 @@
                         "component": {
                             "pkg": "com.color.safecenter",
                             "cls": "com.color.safecenter.permission.PermissionTopActivity"
+                        }
+                    }
+                ]
+            },
+            {
+                "desc": "VIVO手机白名单管理",
+                "device": {
+                    "brand": "vivo"
+                },
+                "intents": [
+                   {
+                        "desc": "后台高耗电",
+                        "title": "需要允许后台高耗电",
+                        "message": "为了核心服务的正常运行，需要添加至允许后台高耗电。",
+                        "component": {
+                            "pkg": "com.vivo.abe",
+                            "cls": "com.vivo.applicationbehaviorengine.ui.ExcessivePowerManagerActivity"
                         }
                     }
                 ]

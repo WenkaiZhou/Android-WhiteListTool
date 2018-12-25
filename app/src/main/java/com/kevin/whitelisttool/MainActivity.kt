@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity() {
         AlertDialog.Builder(this)
             .setCancelable(false)
             .setTitle(title)
-            .setMessage("${message}。\n\n")
+            .setMessage("$message \n\n")
             .setPositiveButton("确定") { d, w ->
                 startActivitySafely(target)
             }
