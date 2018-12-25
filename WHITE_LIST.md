@@ -108,11 +108,19 @@
                     "brand": "Letv"
                 },
                 "intents": [
-                   {
+                    {
                         "desc": "乐视自启动管理",
                         "title": "需要允许自动启动",
                         "message": "为了核心服务的正常运行，需要添加至白名单。",
                         "action": "com.letv.android.permissionautoboot"
+                    },
+                    {
+                        "desc": "乐视应用保护",
+                        "message": "为了核心服务的正常运行，需要自动清理。",
+                        "component": {
+                            "pkg": "com.letv.android.letvsafe",
+                            "cls": "com.letv.android.letvsafe.BackgroundAppManageActivity"
+                        }
                     }
                 ]
             }
