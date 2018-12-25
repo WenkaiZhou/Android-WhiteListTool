@@ -85,8 +85,8 @@
             "intents": [
                 {
                     "desc": "开机自动启动 // 8.0",
-                    "title": "需要允许自动启动",
-                    "message": "为了核心服务的正常运行，需要允许自动启动。",
+                    "title": "需要允许自动启动 1",
+                    "message": "为了核心服务的正常运行，需要在权限管理的自启动管理中添加为允许自动启动。",
                     "component": {
                         "pkg": "com.coloros.safecenter",
                         "cls": "com.coloros.privacypermissionsentry.PermissionTopActivity"
@@ -94,8 +94,8 @@
                 },
                 {
                     "desc": "开机自动启动 // 7.0",
-                    "title": "需要允许自动启动",
-                    "message": "为了核心服务的正常运行，需要允许自动启动。",
+                    "title": "需要允许自动启动 2",
+                    "message": "为了核心服务的正常运行，需要在权限管理的自启动管理中添加为允许自动启动。",
                     "component": {
                         "pkg": "com.color.safecenter",
                         "cls": "com.color.safecenter.permission.PermissionTopActivity"
