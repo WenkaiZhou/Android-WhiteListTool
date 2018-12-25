@@ -133,7 +133,24 @@
                         }
                     }
                 ]
-            }
+            },
+            {
+                "desc": "一加手机白名单管理",
+                "device": {
+                    "brand": "ONEPLUS"
+                },
+                "intents": [
+                    {
+                        "desc": "一加自启动管理",
+                        "title": "需要允许自动启动",
+                        "message": "为了核心服务的正常运行，需要添加至白名单。",
+                        "component": {
+                            "pkg": "com.oneplus.security",
+                            "cls": "com.oneplus.security.chainlaunch.view.ChainLaunchAppListActivity"
+                        }
+                    }
+                ]
+            },
         ]
     }
                     
