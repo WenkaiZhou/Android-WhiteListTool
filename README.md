@@ -1,6 +1,10 @@
 # Android-WhiteListTool
 Android 启动白名单工具-用于帮助用户直达白名单管理
 
+# 下载测试
+
+<img src="https://raw.githubusercontent.com/xuehuayous/Android-WhiteListTool/master/app/qrcode.png" width="200" />
+
 # 支持机型列表
 
 ## 华为
