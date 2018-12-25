@@ -41,7 +41,7 @@
                     {
                         "desc": "神隐模式",
                         "title": "需要关闭神隐模式",
-                        "message": "为了核心服务的正常运行，需要加关闭神隐模式。",
+                        "message": "为了核心服务的正常运行，需要关闭神隐模式。",
                         "component": {
                             "pkg": "com.miui.powerkeeper",
                             "cls": "com.miui.powerkeeper.ui.HiddenAppsConfigActivity"
