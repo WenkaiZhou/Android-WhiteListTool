@@ -9,7 +9,7 @@ Android 启动白名单工具-用于帮助用户直达白名单管理
 
 如果下面列表没有不包含你测试的机型，那么来用GitHub进行一次团队合作吧😆~
 
-[如何pull request](https://raw.githubusercontent.com/xuehuayous/Android-WhiteListTool/master/pull_request.md)
+[如何pull request](https://github.com/xuehuayous/Android-WhiteListTool/blob/master/pull_request.md)
 
 # 支持机型列表
 
