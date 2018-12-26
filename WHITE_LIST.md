@@ -147,6 +147,23 @@
                         }
                     }
                 ]
+            },
+            {
+                "desc": "锤子手机白名单管理",
+                "device": {
+                    "brand": "SMARTISAN"
+                },
+                "intents": [
+                    {
+                        "desc": "锤子自启动管理",
+                        "title": "需要允许自动启动",
+                        "message": "为了核心服务的正常运行，需要添加至自启动管理。",
+                        "component": {
+                            "pkg": "com.smartisanos.security",
+                            "cls": "com.smartisanos.security.invokeHistory.InvokeHistoryActivity"
+                        }
+                    }
+                ]
             }
         ]
     }
