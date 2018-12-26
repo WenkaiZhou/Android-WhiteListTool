@@ -140,32 +140,11 @@
                     {
                         "desc": "自启动管理",
                         "title": "需要允许自动启动",
-                        "message": "为了核心服务的正常运行，需要添加至白名单。",
-                        "action": "com.meizu.safe.security.SHOW_APPSEC",
-                        "categories": [
-                            "android.intent.category.DEFAULT"
-                        ],
-                        "extras": [
-                            {
-                                "key": "packageName",
-                                "value": "com.kevin.whitelisttool"
-                            }
-                        ]
-                    },
-                    {
-                        "desc": "待机耗电管理",
-                        "title": "需要待机耗电",
-                        "message": "为了核心服务的正常运行，需要添加至待机耗电。",
+                        "message": "为了核心服务的正常运行，需要自启动。",
                         "component": {
                             "pkg": "com.meizu.safe",
-                            "cls": "com.meizu.safe.security.AppSecActivity"
-                        },
-                        "extras": [
-                            {
-                                "key": "packageName",
-                                "value": "com.kevin.whitelisttool"
-                            }
-                        ]
+                            "cls": "com.meizu.safe.security.HomeActivity"
+                        }
                     }
                 ]
             },
