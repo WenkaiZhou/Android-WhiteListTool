@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
                 loading.visibility = View.GONE
                 view.isEnabled = true
                 Log.e("TAG", "error: ${e.message}")
-                findViewById<TextView>(R.id.tv_error_info).text = e.message
+                findViewById<TextView>(R.id.tv_info).text = e.message
                 Toast.makeText(applicationContext, "获取数据超时，请重试！", Toast.LENGTH_SHORT).show()
             }
 
@@ -70,6 +70,7 @@ class MainActivity : AppCompatActivity() {
                 view.isEnabled = true
                 val result = response.body()!!.string()
                 Log.d("TAG", "responseStr: $result")
+                findViewById<TextView>(R.id.tv_info).text = result
 
                 val whiteListInfo = Gson().fromJson<WhiteListInfo>(result, WhiteListInfo::class.java)
                 Log.d("TAG", "size: ${whiteListInfo.items?.size}")
@@ -135,7 +136,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         } catch (e: Exception) {
             e.printStackTrace()
-            findViewById<TextView>(R.id.tv_error_info).text = e.message
+            findViewById<TextView>(R.id.tv_info).text = e.message
         }
     }
 
