@@ -7,9 +7,20 @@ Android 启动白名单工具-用于帮助用户直达白名单管理
 
 # 合作贡献
 
-如果下面列表没有不包含你测试的机型，那么来用GitHub进行一次团队合作吧😆~
+1. 如果下面列表没有不包含你测试的机型，那么来用GitHub进行一次团队合作吧😆~ [如何pull request](https://github.com/xuehuayous/Android-WhiteListTool/blob/master/pull_request.md)
 
-[如何pull request](https://github.com/xuehuayous/Android-WhiteListTool/blob/master/pull_request.md)
+2. 如果不支持你的机型，如何支持我的机型？
+
+    找到手机的白名单，通过`adb`命令查看`activity`名称。
+    
+    ```
+    // MAC
+    adb shell dumpsys activity | grep "mFocusedActivity"
+    // Windows
+    adb shell dumpsys activity | findstr "mFocusedActivity"
+    ```
+    
+    修改`WHITE_LIST.md`按照第一步`pull request`。
 
 # 支持机型列表
 
