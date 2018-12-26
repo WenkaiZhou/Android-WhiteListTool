@@ -132,6 +132,32 @@
                 ]
             },
             {
+                "desc": "魅族手机白名单管理",
+                "device": {
+                    "brand": "Meizu"
+                },
+                "intents": [
+                    {
+                        "desc": "自启动管理",
+                        "title": "需要允许自动启动",
+                        "message": "为了核心服务的正常运行，需要添加至白名单。",
+                        "action": "com.meizu.safe.security.SHOW_APPSEC",
+                        "categories": [
+                            "android.intent.category.DEFAULT"
+                        ]
+                    },
+                    {
+                        "desc": "待机耗电管理",
+                        "title": "需要待机耗电",
+                        "message": "为了核心服务的正常运行，需要添加至待机耗电。",
+                        "component": {
+                            "pkg": "com.meizu.safe",
+                            "cls": "com.meizu.safe.powerui.PowerAppPermissionActivity"
+                        }
+                    }
+                ]
+            },
+            {
                 "desc": "一加手机白名单管理",
                 "device": {
                     "brand": "ONEPLUS"
