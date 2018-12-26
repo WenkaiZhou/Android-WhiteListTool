@@ -51,7 +51,13 @@ Android 启动白名单工具-用于帮助用户直达白名单管理
     git merge upstream/master
     ```
     
-7. 到你的github中点击`pull request`，添加说明后提交。
+7. `push`到你的github
+
+    ```
+    git push origin dev
+    ```
+    
+8. 到你的github中点击`pull request`，添加说明后提交。
 
 # 支持机型列表
 
