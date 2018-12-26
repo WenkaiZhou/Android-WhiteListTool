@@ -63,7 +63,7 @@
                 },
                 "intents": [
                     {
-                        "desc": "开机自动启动 // OPPO R15",
+                        "desc": "开机自动启动 // OPPO R15 OPPO R17",
                         "title": "需要允许自动启动 1",
                         "message": "为了核心服务的正常运行，需要在权限管理的自启动管理中添加为允许自动启动。",
                         "component": {
@@ -104,6 +104,32 @@
                         "component": {
                             "pkg": "com.vivo.abe",
                             "cls": "com.vivo.applicationbehaviorengine.ui.ExcessivePowerManagerActivity"
+                        }
+                    }
+                ]
+            },
+            {
+                "desc": "三星手机白名单管理",
+                "device": {
+                    "brand": "samsung"
+                },
+                "intents": [
+                    {
+                        "desc": "自启动管理",
+                        "title": "需要允许自动启动 1",
+                        "message": "为了核心服务的正常运行，需要允许自动启动。",
+                        "component": {
+                            "pkg": "com.samsung.android.sm",
+                            "cls": "com.samsung.android.sm.app.dashboard.SmartManagerDashBoardActivity"
+                        }
+                    },
+                    {
+                        "desc": "自启动管理",
+                        "title": "需要允许自动启动 2",
+                        "message": "为了核心服务的正常运行，需要允许自动启动。",
+                        "component": {
+                            "pkg": "com.samsung.android.sm_cn",
+                            "cls": "com.samsung.android.sm.ui.battery.BatteryActivity"
                         }
                     }
                 ]
