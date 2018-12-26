@@ -16,10 +16,7 @@
                         "desc": "锁屏清理",
                         "title": "需要加入锁屏清理白名单",
                         "message": "为了核心服务的正常运行，需要加入锁屏清理白名单。",
-                        "component": {
-                            "pkg": "com.huawei.systemmanager",
-                            "cls": "com.huawei.systemmanager.optimize.process.ProtectActivity"
-                        }
+                        "action": "huawei.intent.action.HSM_PROTECTED_APPS"
                     }
                 ]
             },
