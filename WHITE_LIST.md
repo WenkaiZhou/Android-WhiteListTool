@@ -158,8 +158,14 @@
                         "message": "为了核心服务的正常运行，需要添加至待机耗电。",
                         "component": {
                             "pkg": "com.meizu.safe",
-                            "cls": "com.meizu.safe.powerui.PowerAppPermissionActivity"
-                        }
+                            "cls": "com.meizu.safe.security.AppSecActivity"
+                        },
+                        "extras": [
+                            {
+                                "key": "packageName",
+                                "value": "com.kevin.whitelisttool"
+                            }
+                        ]
                     }
                 ]
             },
