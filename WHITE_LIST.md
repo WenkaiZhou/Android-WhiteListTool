@@ -144,6 +144,12 @@
                         "action": "com.meizu.safe.security.SHOW_APPSEC",
                         "categories": [
                             "android.intent.category.DEFAULT"
+                        ],
+                        "extras": [
+                            {
+                                "key": "packageName",
+                                "value": "com.kevin.whitelisttool"
+                            }
                         ]
                     },
                     {
