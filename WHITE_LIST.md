@@ -161,7 +161,13 @@
                         "component": {
                             "pkg": "com.smartisanos.security",
                             "cls": "com.smartisanos.security.invokeHistory.InvokeHistoryActivity"
-                        }
+                        },
+                        "extras": [
+                            {
+                                "key": "packageName",
+                                "value": "com.kevin.whitelisttool"
+                            }
+                        ]
                     }
                 ]
             }
