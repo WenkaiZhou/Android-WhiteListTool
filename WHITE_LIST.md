@@ -165,12 +165,18 @@
                 "intents": [
                     {
                         "desc": "自启动管理",
-                        "title": "需要允许自动启动",
+                        "title": "需要允许自动启动 1",
                         "message": "为了核心服务的正常运行，需要自启动。",
                         "component": {
                             "pkg": "com.meizu.safe",
                             "cls": "com.meizu.safe.security.HomeActivity"
                         }
+                    }
+                    {
+                        "desc": "自启动管理",
+                        "title": "需要允许自动启动 2",
+                        "message": "为了核心服务的正常运行，需要自启动。",
+                        "action": "com.meizu.safe.PERMISSION_SETTING"
                     }
                 ]
             },
