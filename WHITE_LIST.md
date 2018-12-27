@@ -171,7 +171,7 @@
                             "pkg": "com.meizu.safe",
                             "cls": "com.meizu.safe.security.HomeActivity"
                         }
-                    }
+                    },
                     {
                         "desc": "自启动管理",
                         "title": "需要允许自动启动 2",
