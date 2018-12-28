@@ -26,13 +26,13 @@ public class LocalFileUtils {
     /**
      * 获取Asset下文本内容
      * @param context
-     * @param str
+     * @param fileName
      * @return
      */
-    public final static String getStringFormAsset(Context context, String str) {
+    public final static String getStringFormAsset(Context context, String fileName) {
         BufferedReader br = null;
         try {
-            br = new BufferedReader(new InputStreamReader(context.getAssets().open(str)));
+            br = new BufferedReader(new InputStreamReader(context.getAssets().open(fileName)));
             String line;
             StringBuilder buffer = new StringBuilder();
             while ((line = br.readLine()) != null) {

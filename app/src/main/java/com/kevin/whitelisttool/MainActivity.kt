@@ -2,6 +2,7 @@ package com.kevin.whitelisttool
 
 import android.annotation.SuppressLint
 import android.content.ComponentName
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
@@ -69,6 +70,9 @@ class MainActivity : AppCompatActivity() {
                 loading.visibility = View.GONE
                 view.isEnabled = true
                 val result = response.body()!!.string()
+                    .replace("{package}", packageName)
+                    .replace("{label}", getAppName(this@MainActivity))
+
                 Log.d("TAG", "responseStr: $result")
                 findViewById<TextView>(R.id.tv_info).text = result
 
@@ -138,6 +142,25 @@ class MainActivity : AppCompatActivity() {
             e.printStackTrace()
             findViewById<TextView>(R.id.tv_info).text = e.message
         }
+    }
+
+    /**
+     * 获取App的名称
+     *
+     * @param context 上下文
+     * @return 名称
+     */
+    fun getAppName(context: Context): String {
+        val pm = context.packageManager
+        try {
+            val packageInfo = pm.getPackageInfo(context.packageName, 0)
+            val applicationInfo = packageInfo.applicationInfo
+            val labelRes = applicationInfo.labelRes
+            return context.resources.getString(labelRes)
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+        return ""
     }
 
 }
