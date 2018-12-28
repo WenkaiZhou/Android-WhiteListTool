@@ -17,7 +17,7 @@ object DeviceUtils {
     fun getManufacturer() = android.os.Build.MANUFACTURER
 
     /**
-     * 获取主板名称 如: Xiaomi
+     * 获取品牌名称 如: Xiaomi
      */
     fun getBrand() = android.os.Build.BRAND
 
